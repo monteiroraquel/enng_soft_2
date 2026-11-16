@@ -20,6 +20,8 @@ corepack pnpm db:seed
 corepack pnpm dev
 ```
 
+O Prisma Client é gerado automaticamente durante `pnpm install` por meio do script `postinstall`. Se a instalação tiver sido feita com scripts de ciclo de vida desativados, gere-o manualmente com `corepack pnpm db:generate`.
+
 O servidor fica em `http://127.0.0.1:3001`. No segundo terminal, inicie o front-end conforme o README principal. O Vite usa a porta 8443; essa origem já está liberada em `CORS_ORIGINS`.
 
 ## Perfis locais de demonstração

@@ -17,6 +17,8 @@ corepack pnpm db:seed
 corepack pnpm dev
 ```
 
+No backend, `pnpm install` gera automaticamente o Prisma Client. Se scripts de instalação estiverem desativados, execute `corepack pnpm db:generate` em `figma/backend`.
+
 Na primeira execução, substitua o `JWT_SECRET` em `figma/backend/.env` por uma chave aleatória com pelo menos 32 caracteres.
 
 ### Terminal 2 — interface web
