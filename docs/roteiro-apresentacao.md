@@ -11,7 +11,7 @@
 | 5. Tecnologias e decisões | React, TypeScript, Vite, Fastify, Prisma e SQLite; escopo local e dados demonstrativos | 1 min |
 | 6. Gestão de configuração | Repositório real, organização, branches/commits praticados e fluxo de mudança | 1 min |
 | 7. Qualidade | Usabilidade, manutenibilidade, segurança e limites conhecidos; mostrar evidências | 1,5 min |
-| 8. Testes | Suíte API: 39 passaram; casos manuais de interface, evidências, problemas e correções | 1,5 min |
+| 8. Testes | 39 passaram em execução anterior; nova execução falhou ao preparar o banco. Reexecutar e atualizar o resultado antes da apresentação | 1,5 min |
 | 9. Demonstração | Login, guildas, eventos, envio/revisão de ideia e certificados; distinguir dados persistidos e conteúdo demonstrativo | 4–5 min |
 | 10. Participação | Tabela curta com integrantes, responsabilidades e artefatos | 1 min |
 | 11. Aprendizados e futuro | Dificuldades, aprendizados e próximos passos | 1 min |

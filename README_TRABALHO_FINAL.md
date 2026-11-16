@@ -40,7 +40,7 @@ Foi adotada uma estratégia de testes automatizados de integração para verific
 
 A suíte contém **39 testes independentes**, cobrindo disponibilidade da API; acesso sem autenticação; login com credenciais válidas, senha incorreta e usuário inexistente; cadastro válido, duplicado e com dados inválidos; consulta de perfil e proteção do hash de senha; guildas e inscrições duplicadas ou inexistentes; criação e atualização de ideias com controle de permissões; certificados e isolamento entre usuários; e permissões para gerenciamento da diretoria.
 
-Na última execução registrada em **16 de novembro de 2026**, os **39 testes passaram e nenhum falhou**. O build TypeScript do backend também foi executado com sucesso. Esses resultados cobrem a API; não representam uma execução dos testes manuais da interface.
+Em uma execução concluída em **16 de novembro de 2026**, os **39 testes passaram e nenhum falhou**. O build TypeScript do backend também passou. Porém, uma tentativa posterior neste ambiente falhou durante a preparação do banco com Prisma, antes de a suíte iniciar. Trate os 39 aprovados como resultado anterior e repita `corepack pnpm test` neste ambiente antes de apresentar esse resultado como confirmado. Os testes automatizados cobrem a API; não representam uma execução dos testes manuais da interface.
 
 **Comando para executar novamente:** abrir o terminal em `figma/backend` e rodar `corepack pnpm test`. O relatório de execução aparece no terminal. Inclua uma captura de tela desse resultado como evidência, preferencialmente mostrando `tests 39`, `pass 39` e `fail 0`.
 

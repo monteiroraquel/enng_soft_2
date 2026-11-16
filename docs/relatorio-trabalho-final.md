@@ -187,7 +187,7 @@ Inserir capturas próprias de: login, painel de aluno, painel de gestão, tela d
 
 ## 6. Testes realizados e resultados
 
-Os front-end e backend compilam sem erros de TypeScript. O backend tem 39 testes automatizados de integração em `figma/backend/tests/api.test.ts`, executados com banco SQLite temporário. Na última execução, os 39 testes passaram e nenhum falhou. Os cenários manuais de interface abaixo ainda precisam ser executados pelo grupo e registrados.
+Os front-end e backend compilam sem erros de TypeScript. O backend tem 39 testes automatizados de integração em `figma/backend/tests/api.test.ts`, executados com banco SQLite temporário. Uma execução anterior concluiu com 39 aprovados e nenhum falho. Na tentativa mais recente neste ambiente, a preparação do banco com Prisma falhou antes do início da suíte; portanto, esse resultado anterior ainda precisa ser reproduzido neste ambiente. Os cenários manuais de interface abaixo também precisam ser executados pelo grupo e registrados.
 
 ### 6.1 Estratégia
 
@@ -216,7 +216,7 @@ Executar testes manuais de fluxo na interface, cobrindo cada perfil e os princip
 
 ### 6.3 Resultado consolidado
 
-**Suíte automatizada do backend:** 39 passaram, 0 falharam.  
+**Última execução concluída da suíte:** 39 passaram, 0 falharam. Uma tentativa posterior falhou ao preparar o banco com Prisma, antes de executar os testes; repetir a suíte neste ambiente antes de fechar o relatório.  
 **Comando:** `corepack pnpm test` (na pasta `figma/backend`).  
 **Banco de teste:** SQLite temporário em `tests/data/`, removido ao final da execução.
 
