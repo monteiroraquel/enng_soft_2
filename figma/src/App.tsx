@@ -1043,14 +1043,14 @@ function StudentHome({ go }: { go: (page: string) => void }) {
         </button>
       </section>
       <section className="featured-guilds">
-        {guilds.slice(0, 3).map((guild) => (
-          <article key={guild.name} style={{ "--guild-color": guild.color } as CSSProperties}>
-            <span className="guild-number">{guild.icon}</span>
+        {guilds.slice(0, 3).map((guild, index) => (
+          <article key={guild.id} style={{ "--guild-color": guild.color } as CSSProperties}>
+            <span className="guild-number">{String(index + 1).padStart(2, "0")}</span>
             <div className="guild-symbol">{guild.short}</div>
             <p>{guild.level}</p>
             <h3>{guild.name}</h3>
             <div>
-              <span>{guild.members} participantes</span>
+              <span>{guild.memberCount} participantes</span>
               <button onClick={() => go("Guildas")} aria-label={`Ver guilda ${guild.name}`}>
                 <Icon name="arrow" size={16} />
               </button>
@@ -1204,15 +1204,15 @@ function GuildsPage({
         </div>
         <div className="guild-live">
           <span />
-          <strong>6 guildas ativas</strong>
+          <strong>{guilds.length} guildas ativas</strong>
           <small>Encontros semanais</small>
         </div>
       </section>
       <section className="guild-full-grid">
-        {loading ? <p>Carregando guildas...</p> : visible.map((guild) => (
-          <article key={guild.name} style={{ "--guild-color": guild.color } as CSSProperties}>
+        {loading ? <p>Carregando guildas...</p> : visible.map((guild, index) => (
+          <article key={guild.id} style={{ "--guild-color": guild.color } as CSSProperties}>
             <div className="guild-card-top">
-              <span>{guild.icon}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <em>{guild.level}</em>
             </div>
             <div className="guild-logo">{guild.short}</div>
@@ -1224,7 +1224,7 @@ function GuildsPage({
             <div className="guild-card-footer">
               <span>
                 <Icon name="users" size={15} />
-                {guild.members} participantes
+                {guild.memberCount} participantes
               </span>
               <button
                 disabled={role !== "student" || memberships.includes(guild.id)}
