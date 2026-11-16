@@ -1,0 +1,11 @@
+{
+  "title": "ByteHub - Liga Acadêmica",
+  "description": "Plataforma para a diretoria e membros da Byte Builders gerenciarem equipes, projetos, eventos e parcerias, preservando o conhecimento e conectando oportunidades.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

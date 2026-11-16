@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String                @id @default(cuid())
+  name         String
+  email        String                @unique
+  login        String                @unique
+  passwordHash String
+  role         String                @default("student")
+  area         String?
+  createdAt    DateTime              @default(now())
+  memberships  GuildMembership[]
+  registrations EventRegistration[]
+  ideas        Idea[]
+  certificates Certificate[]
+}
+
+model Guild {
+  id          String            @id @default(cuid())
+  name        String            @unique
+  short       String
+  level       String
+  color       String
+  memberCount Int               @default(0)
+  memberships GuildMembership[]
+}
+
+model GuildMembership {
+  id        String   @id @default(cuid())
+  userId    String
+  guildId   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guild     Guild    @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, guildId])
+}
+
+model Event {
+  id            String              @id @default(cuid())
+  title         String              @unique
+  category      String
+  startsAt      DateTime
+  location      String
+  description   String
+  isDemo        Boolean             @default(true)
+  registrations EventRegistration[]
+}
+
+model EventRegistration {
+  id        String   @id @default(cuid())
+  userId    String
+  eventId   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+}
+
+model Idea {
+  id          String   @id @default(cuid())
+  title       String
+  category    String
+  description String
+  status      String   @default("Pendente")
+  authorId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+}
+
+model Certificate {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String
+  size      String
+  mimeType  String?
+  addedAt   DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
