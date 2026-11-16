@@ -31,6 +31,16 @@ corepack pnpm dev
 
 Abra o endereço mostrado pelo Vite (no ambiente do projeto, `http://localhost:8443`).
 
+### Iniciar tudo com um comando (Windows)
+
+Na pasta `enng_soft_2`, execute no PowerShell:
+
+```powershell
+.\iniciar-bytehub.ps1
+```
+
+O script configura o `.env` se necessário, prepara o banco local e inicia backend e interface. Ele abre uma janela para cada servidor para que os logs continuem visíveis e abre o ByteHub no navegador. Se as dependências ainda não estiverem instaladas, o script tenta instalá-las. Para encerrar, pressione `Ctrl+C` em cada janela dos servidores. Se o PowerShell bloquear o script, execute `powershell -ExecutionPolicy Bypass -File .\iniciar-bytehub.ps1`.
+
 Para gerar a versão de produção da interface:
 
 ```bash
